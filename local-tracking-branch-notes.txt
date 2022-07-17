@@ -1,0 +1,22 @@
+Let's say one of your colleagues has already started and published a branch
+on your remote server. You now want to chime in and start working on that
+topic, too. In that scenario, simply use the --track flag with the "git
+checkout" command:
+
+$ git checkout --track origin/dev
+
+This creates a new local branch with the same name as the remote one - and
+directly establishes a tracking connection between the two.
+
+Let's now look at the opposite scenario: you started a new local branch and
+now want to publish it on the remote for the first time:
+
+$ git push -u origin dev
+
+You can tell Git to track the newly created remote branch simply by using
+the -u flag with "git push".
+
+In cases when you simply forgot, you can set (or change) a tracking
+relationship for your current HEAD branch at any time:
+
+$ git branch -u origin/dev
