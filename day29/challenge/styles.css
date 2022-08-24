@@ -86,6 +86,10 @@ button{
     background-color: rgb(208, 215, 230);
 }
 
+.section-control{
+    margin-bottom: 1rem;
+}
+
 .inline-control{
     display: flex;
 }
