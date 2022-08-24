@@ -11,32 +11,32 @@
         <h1>Contact Us</h1>
     </header>
     <main>
-        <form action="/" method="GET">
+        <form action="/challenge" method="GET">
             <section>
                 <h2>How can we help you?</h2>
                 <ul>
                     <li>
                         <label for="username">Your Name</label>
-                        <input type="text" id="username" name="username">
+                        <input type="text" id="username" name="username" required>
                     </li>
                     <li>
                         <label for="email">Your E-mail Address</label>
-                        <input type="email" id="email" name="email">
+                        <input type="email" id="email" name="email" required>
                     </li>
                     <li>
                         <label for="phone">Your Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
+                        <input type="tel" id="phone" name="phone" required minlength="5">
                     </li>
                     <li>
                         <label for="message">Your Message</label>
-                        <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                        <textarea name="message" id="message" cols="30" rows="10" required minlength="10" maxlength="200"></textarea>
                     </li>
                 </ul>
             </section>
 
             <section>
                 <label for="channel">How did you find us?</label>
-                <select name="channel" id="channel">
+                <select name="channel" id="channel" required>
                     <option value="search">Web Search</option>
                     <option value="word-of-mouth">Word of Mouth</option>
                     <option value="other">Other</option>
@@ -47,22 +47,22 @@
                 <h2>How should we reply?</h2>
                 <ul>
                     <li>
-                        <input type="radio" name="reply" id="reply-phone" value="phone">
+                        <input type="radio" name="reply" id="reply-phone" value="phone" required>
                         <label for="reply-phone">Call me</label>
                     </li>
                     <li>
-                        <input type="radio" name="reply" id="reply-email" value="email">
+                        <input type="radio" name="reply" id="reply-email" value="email" required>
                         <label for="reply-email">Send me an email</label>
                     </li>
                     <li>
-                        <input type="radio" name="reply" id="reply-none" value="none">
+                        <input type="radio" name="reply" id="reply-none" value="none" required>
                         <label for="reply-none">Don't reply</label>
                     </li>
                 </ul>
             </section>
 
             <section>
-                <input type="checkbox" name="accept-terms" id="accept-terms">
+                <input type="checkbox" name="accept-terms" id="accept-terms" required>
                 <label for="accept-terms">Accept Terms</label>
             </section>
 
