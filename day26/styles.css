@@ -41,7 +41,12 @@ select{
     color: rgb(61, 58, 58);
 }
 
-input:focus, textarea:focus{
+textarea{
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus{
     background-color: rgb(219, 190, 253);
     color: rgb(32, 5, 63);
     border-color: rgb(32, 5, 63);
