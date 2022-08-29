@@ -1,6 +1,5 @@
-let greetingText = 'Hi, I\'m Samet!'
-alert(greetingText)
-greetingText = 'Hi, I\'m real Samet!'
-alert(greetingText)
-let myAge = 34
-alert('and I\'m $myAge years old!')
+let age = 34;
+let userName = "Samet";
+let hobbies = ["Sports", "Cooking", "Reading"];
+
+alert(hobbies[0]);
