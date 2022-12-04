@@ -18,3 +18,12 @@ alert(totalAdultYears)
 age = 45;
 totalAdultYears = calculateAdultYears(age);
 alert(adultYears)
+
+let person = {
+    name: "Samet",
+    greet() {
+        alert("Hello!");
+    }
+};
+
+person.greet();
