@@ -17,12 +17,12 @@ alert(totalAdultYears)
 
 age = 45;
 totalAdultYears = calculateAdultYears(age);
-alert(adultYears)
+alert(totalAdultYears)
 
 let person = {
-    name: "Samet",
+    pName: "Samet",
     greet() {
-        alert("Hello!");
+        alert("Hello " + this.pName + "!");
     }
 };
 
