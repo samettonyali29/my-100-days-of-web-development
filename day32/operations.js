@@ -21,3 +21,7 @@ result -= 5;
 console.log(result);
 
 console.log('Samet' + ' Tonyali');
+
+let userName = 'Samet';
+console.log(userName.length);
+console.log(userName.toUpperCase());
