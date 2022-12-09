@@ -18,4 +18,6 @@ result--;
 result += 5;
 result -= 5;
 
-console.log(result)
+console.log(result);
+
+console.log('Samet' + ' Tonyali');
