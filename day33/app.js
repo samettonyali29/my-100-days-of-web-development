@@ -1,29 +1,7 @@
-let age = 34;
-let userName = "Samet";
-let hobbies = ["Sports", "Cooking", "Reading"];
-let job = {
-    title: "Developer",
-    place: "Gümüşhane",
-    salary: 20000
-};
+//document.body.children[1].children[0].href = 'https://www.google.com';
 
-let totalAdultYears;
-function calculateAdultYears(userAge){
-    return userAge - 18
-}
+let anchorElement = document.getElementById('external-link');
+anchorElement.href = 'https://www.google.com';
 
-totalAdultYears = calculateAdultYears(age);
-console.log(totalAdultYears)
-
-age = 45;
-totalAdultYears = calculateAdultYears(age);
-console.log(totalAdultYears)
-
-let person = {
-    pName: "Samet",
-    greet() {
-        console.log("Hello " + this.pName + "!");
-    }
-};
-
-person.greet();
+anchorElement = document.querySelector('p a');
+anchorElement.href = 'http://yazilim.gumushane.edu.tr';
