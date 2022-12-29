@@ -20,3 +20,17 @@ function calculateSum () {
 }
 
 calculateSumButtonElement.addEventListener('click', calculateSum);
+
+// Highligt links
+
+const highlightLinksButtonElement = document.querySelector('#highlight-links button');
+
+function highlightLinks () {
+    const anchorElements = document.querySelectorAll('#highlight-links a');
+
+    for (const anchorelement of anchorElements) {
+        anchorelement.classList.add('highlight');
+    }
+}
+
+highlightLinksButtonElement.addEventListener('click', highlightLinks);
