@@ -1,18 +1,23 @@
 // node day47/app.js
 
-const http = require('http');
+const express = require('express');
 
-function handleRequest (request, response) {
+const app = express();
 
-    if (request.url === '/currenttime') {
-        response.statusCode = 200;
-        response.end('<h1>' + new Date().toISOString() + '</h1>');
-    } else if (request.url === '/'){
-        response.statusCode = 200;
-        response.end('<h1>Hello World!</h1>');
-    }
-}
+app.use(express.urlencoded({extended: false}));
 
-const server = http.createServer(handleRequest);
+app.get('/currenttime', function (request, response) {
+    response.send('<h1>' + new Date().toISOString() + '</h1>');
+}); // localhost:3000/currenttime
 
-server.listen(3000);
+app.get('/', function (request, response) {
+    response.send('<form action="/store-user" method="POST"><label>Your Name</label><input type="text" name="username"><button>Submit</button></form>');
+});
+
+app.post('/store-user', function (request, response) {
+    const userName = request.body.username;
+    console.log(userName);
+    response.send('<h1>Username stored!</h1>');
+});
+
+app.listen(3000);
