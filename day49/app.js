@@ -14,7 +14,7 @@ app.get('/currenttime', function (request, response) {
 }); // localhost:3000/currenttime
 
 app.get('/', function (request, response) {
-    response.send('<form action="/store-user" method="POST"><label>Your Name</label><input type="text" name="username"><button>Submit</button></form>');
+    response.send('<form action="/store-user" method="POST"><label>Your Name: </label><input type="text" name="username"><button>Submit</button></form>');
 });
 
 app.post('/store-user', function (request, response) {
