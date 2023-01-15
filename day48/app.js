@@ -1,5 +1,8 @@
 // node day47/app.js
 
+const fs = require('fs');
+const path = require('path');
+
 const express = require('express');
 
 const app = express();
@@ -16,7 +19,16 @@ app.get('/', function (request, response) {
 
 app.post('/store-user', function (request, response) {
     const userName = request.body.username;
-    console.log(userName);
+    
+    const filePath = path.join(__dirname, 'data', 'users.json');
+
+    const fileData = fs.readFileSync(filePath);
+    const existingUsers = JSON.parse(fileData);
+
+    existingUsers.push(userName);
+
+    fs.writeFileSync(filePath, JSON.stringify(existingUsers));
+
     response.send('<h1>Username stored!</h1>');
 });
 
