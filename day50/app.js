@@ -16,7 +16,12 @@ app.get('/', function (request, response) {
 });
 
 app.get('/restaurants', function (request, response) {
-    response.render('restaurants');
+    const filePath = path.join(__dirname, 'data', 'restaurants.json');
+
+    const fileData = fs.readFileSync(filePath);
+    const storedRestaurants = JSON.parse(fileData);
+
+    response.render('restaurants', { numberOfRestaurants: storedRestaurants.length });
 });
 
 app.get('/about', function (request, response) {
