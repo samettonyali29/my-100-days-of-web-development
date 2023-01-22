@@ -24,6 +24,11 @@ app.get('/restaurants', function (request, response) {
     response.render('restaurants', { numberOfRestaurants: storedRestaurants.length, restaurants: storedRestaurants });
 });
 
+app.get('/restaurants/:id', function (request, response) {
+    const restaurantId = request.params.id;
+    response.render('restaurant-detail', {rid: restaurantId});
+});
+
 app.get('/about', function (request, response) {
     response.render('about');
 });
