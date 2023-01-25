@@ -27,7 +27,18 @@ app.get('/restaurants', function (request, response) {
 
 app.get('/restaurants/:id', function (request, response) {
     const restaurantId = request.params.id;
-    response.render('restaurant-detail', {rid: restaurantId});
+    const filePath = path.join(__dirname, 'data', 'restaurants.json');
+
+    const fileData = fs.readFileSync(filePath);
+    const storedRestaurants = JSON.parse(fileData);
+
+    for (const restaurant of storedRestaurants) {
+        if (restaurant.id === restaurantId) {
+            return response.render('restaurant-detail', { restaurant: restaurant });
+        }
+    }
+
+    response.render('404');
 });
 
 app.get('/about', function (request, response) {
