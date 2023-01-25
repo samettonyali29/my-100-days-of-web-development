@@ -72,4 +72,8 @@ app.use(function (request, response) {
     response.render('404');
 });
 
+app.use(function (error, request, response, next) {
+    response.render('500');
+});
+
 app.listen(3000);
