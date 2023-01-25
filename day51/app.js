@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const express = require('express');
+const uuid = require('uuid');
 
 const app = express();
 
@@ -24,6 +25,11 @@ app.get('/restaurants', function (request, response) {
     response.render('restaurants', { numberOfRestaurants: storedRestaurants.length, restaurants: storedRestaurants });
 });
 
+app.get('/restaurants/:id', function (request, response) {
+    const restaurantId = request.params.id;
+    response.render('restaurant-detail', {rid: restaurantId});
+});
+
 app.get('/about', function (request, response) {
     response.render('about');
 });
@@ -38,6 +44,7 @@ app.get('/recommend', function (request, response) {
 
 app.post('/recommend', function (request, response) {
     const restaurant = request.body;
+    restaurant.id = uuid.v4();
     const filePath = path.join(__dirname, 'data', 'restaurants.json');
 
     const fileData = fs.readFileSync(filePath);
