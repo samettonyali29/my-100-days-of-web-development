@@ -56,14 +56,11 @@ app.get('/recommend', function (request, response) {
 app.post('/recommend', function (request, response) {
     const restaurant = request.body;
     restaurant.id = uuid.v4();
-    const filePath = path.join(__dirname, 'data', 'restaurants.json');
+    const restaurants = getStoredRestaurants();
 
-    const fileData = fs.readFileSync(filePath);
-    const storedRestaurants = JSON.parse(fileData);
+    restaurants.push(restaurant);
 
-    storedRestaurants.push(restaurant);
-
-    fs.writeFileSync(filePath, JSON.stringify(storedRestaurants));
+    storeRestaurants(restaurants);
 
     response.redirect('/confirm');
 });
